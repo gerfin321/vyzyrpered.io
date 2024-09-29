@@ -1,7 +1,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #2193b0, #6dd5ed);
-    color: white;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #f0f0f0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,34 +9,38 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 h1 {
-    font-size: 3rem;
-    text-transform: uppercase;
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 5px;
     margin-bottom: 20px;
 }
 
 .form-container {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    max-width: 500px;
-    width: 100%;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
     text-align: center;
-    transition: all 0.5s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 input, select, button {
-    width: 90%;
+    width: 80%;
     padding: 12px;
     margin: 10px 0;
     font-size: 1rem;
     border: none;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
 input:focus, select:focus {
@@ -45,33 +49,40 @@ input:focus, select:focus {
 }
 
 button {
-    background-color: #ff6f61;
+    background-color: #00b894;
     color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #e55750;
-    transform: scale(1.1);
+    background-color: #019875;
+    transform: scale(1.05);
 }
 
-#prediction {
+#story {
     display: none;
-    margin-top: 30px;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 15px;
-}
-
-p {
-    font-size: 1.2rem;
+    margin-top: 20px;
 }
 
 .fade-in {
-    animation: fadeIn 2s forwards;
+    animation: fadeIn 1s forwards;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+#restart {
+    margin-top: 20px;
+    background-color: #d63031;
+}
+
+#restart:hover {
+    background-color: #c0392b;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
 }
