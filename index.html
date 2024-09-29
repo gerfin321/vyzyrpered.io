@@ -3,42 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Машина Часу - Подорож у Завтра</title>
+    <title>Передбачення для вчителів</title>
     <!-- Підключення стилів -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Машина Часу</h1>
-    <h2>Подорож у Завтра</h2>
+    <h1>Передбачення для вчителів</h1>
+    <h2>Введіть ім’я вчителя та отримайте унікальне передбачення!</h2>
     
     <div class="form-container">
-        <form id="user-form">
-            <label>Як вас звати?</label>
-            <input type="text" id="name" placeholder="Введіть ваше ім'я" required>
+        <form id="greeting-form">
+            <label>Ім'я вчителя:</label>
+            <input type="text" id="teacher-name" placeholder="Введіть ім'я вчителя" required>
 
-            <label>Скільки вам років?</label>
-            <input type="number" id="age" placeholder="Введіть ваш вік" required>
-
-            <label>Виберіть ваш настрій:</label>
-            <select id="mood" required>
-                <option value="">-- Оберіть настрій --</option>
-                <option value="щасливий">Щасливий</option>
-                <option value="сумний">Сумний</option>
-                <option value="енергійний">Енергійний</option>
-                <option value="лінивий">Лінивий</option>
-            </select>
-
-            <label>Вкажіть вашу улюблену тварину:</label>
-            <input type="text" id="animal" placeholder="Наприклад, кіт" required>
-
-            <button type="submit">Почати подорож</button>
+            <button type="submit">Отримати передбачення</button>
         </form>
 
-        <div id="story" class="fade-in">
-            <h2>Ваша історія:</h2>
-            <p id="result"></p>
-            <button id="restart">Повернутись назад</button>
+        <div id="prediction-card" class="fade-in">
+            <h2>Передбачення для <span id="teacher-name-output"></span>:</h2>
+            <p id="prediction"></p>
+            <button id="restart">Зробити нове передбачення</button>
         </div>
     </div>
 
