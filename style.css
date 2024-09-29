@@ -1,0 +1,77 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+input, select, button {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+input:focus, select:focus {
+    transform: scale(1.05);
+    outline: none;
+}
+
+button {
+    background-color: #ff6f61;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e55750;
+    transform: scale(1.1);
+}
+
+#prediction {
+    display: none;
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.fade-in {
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
