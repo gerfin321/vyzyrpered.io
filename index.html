@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Генератор передбачень на завтра</title>
-    <!-- Подключение файла стилей -->
+    <title>Машина Часу - Подорож у Завтра</title>
+    <!-- Підключення стилів -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Генератор передбачень на завтра</h1>
+    <h1>Машина Часу</h1>
+    <h2>Подорож у Завтра</h2>
     
     <div class="form-container">
         <form id="user-form">
@@ -19,19 +20,29 @@
             <label>Скільки вам років?</label>
             <input type="number" id="age" placeholder="Введіть ваш вік" required>
 
-            <label>Що вам подобається робити?</label>
-            <input type="text" id="hobby" placeholder="Ваше хобі" required>
+            <label>Виберіть ваш настрій:</label>
+            <select id="mood" required>
+                <option value="">-- Оберіть настрій --</option>
+                <option value="щасливий">Щасливий</option>
+                <option value="сумний">Сумний</option>
+                <option value="енергійний">Енергійний</option>
+                <option value="лінивий">Лінивий</option>
+            </select>
 
-            <button type="submit">Дізнатись передбачення</button>
+            <label>Вкажіть вашу улюблену тварину:</label>
+            <input type="text" id="animal" placeholder="Наприклад, кіт" required>
+
+            <button type="submit">Почати подорож</button>
         </form>
 
-        <div id="prediction" class="fade-in">
-            <h2>Ваше передбачення:</h2>
+        <div id="story" class="fade-in">
+            <h2>Ваша історія:</h2>
             <p id="result"></p>
+            <button id="restart">Повернутись назад</button>
         </div>
     </div>
 
-    <!-- Подключение файла скриптов -->
+    <!-- Підключення скриптів -->
     <script src="script.js"></script>
 
 </body>
