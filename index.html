@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор передбачень на завтра</title>
+    <!-- Подключение файла стилей -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Генератор передбачень на завтра</h1>
+    
+    <div class="form-container">
+        <form id="user-form">
+            <label>Як вас звати?</label>
+            <input type="text" id="name" placeholder="Введіть ваше ім'я" required>
+
+            <label>Скільки вам років?</label>
+            <input type="number" id="age" placeholder="Введіть ваш вік" required>
+
+            <label>Що вам подобається робити?</label>
+            <input type="text" id="hobby" placeholder="Ваше хобі" required>
+
+            <button type="submit">Дізнатись передбачення</button>
+        </form>
+
+        <div id="prediction" class="fade-in">
+            <h2>Ваше передбачення:</h2>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <!-- Подключение файла скриптов -->
+    <script src="script.js"></script>
+
+</body>
+</html>
