@@ -1,23 +1,61 @@
-const predictions = [
-    "Завтра на вас чекають нові можливості, і вам варто бути готовим до важливих рішень.",
-    "Ви відчуєте приплив енергії, і це чудовий час для того, щоб зробити щось несподіване.",
-    "Можливо, саме завтра ви зможете подолати те, що довгий час вас тримало на місці.",
-    "Ваші творчі ідеї принесуть плоди, якщо ви присвятите час тому, що вам дійсно важливо.",
-    "Завтра буде день, коли ви зможете розкрити свої сильні сторони та вразити оточуючих.",
-    "Будьте готові до несподіваної зустрічі, яка може змінити хід вашого життя."
-];
-
 document.getElementById('user-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
+    // Отримання даних користувача
     const name = document.getElementById('name').value;
     const age = document.getElementById('age').value;
-    const hobby = document.getElementById('hobby').value;
+    const mood = document.getElementById('mood').value;
+    const animal = document.getElementById('animal').value;
 
-    const randomPrediction = predictions[Math.floor(Math.random() * predictions.length)];
+    // Перевірка заповнення всіх полів
+    if (!name || !age || !mood || !animal) {
+        alert('Будь ласка, заповніть всі поля форми.');
+        return;
+    }
 
-    const resultText = `${name}, вам ${age} років, і вам подобається ${hobby}. Завтра вас чекає: ${randomPrediction}`;
-    document.getElementById('result').innerText = resultText;
+    // Генерація історії
+    const story = generateStory(name, age, mood, animal);
 
-    document.getElementById('prediction').style.display = 'block';
+    // Відображення історії
+    document.getElementById('result').innerHTML = story;
+    document.getElementById('story').style.display = 'block';
+    document.querySelector('.form-container form').style.display = 'none';
 });
+
+document.getElementById('restart').addEventListener('click', function() {
+    // Скидання форми
+    document.getElementById('user-form').reset();
+    document.getElementById('story').style.display = 'none';
+    document.querySelector('.form-container form').style.display = 'block';
+});
+
+function generateStory(name, age, mood, animal) {
+    // Массиви фраз для історії
+    const beginnings = [
+        `Прокинувшись рано вранці, ${name} відчув(ла), що день буде незвичайним.`,
+        `Це був звичайний ранок для ${name}, але щось було не так.`,
+        `${name} відкрив(ла) очі і зрозумів(ла), що сьогодні світ виглядає інакше.`,
+    ];
+
+    const middles = [
+        `Вирішивши не звертати уваги на дивні відчуття, ${name} пішов(ла) займатися улюбленою справою — ${animal} спостерігали за ним(нею) з цікавістю.`,
+        `Раптом ${animal} заговорив(ла) людським голосом і запропонував(ла) неймовірну пригоду.`,
+        `Несподівано з'явився портал, і ${name} разом з ${animal} потрапили у паралельний всесвіт.`,
+    ];
+
+    const endings = [
+        `Після всіх пригод, ${name} зрозумів(ла), що ${mood} настрій допоміг пережити цей незвичайний день.`,
+        `В кінці дня, ${name} усміхнувся(лась) і подумав(ла): "Добре, що мені ${age}, і життя тільки починається!"`,
+        `Цей день назавжди залишився в пам'яті ${name}, нагадуючи, що життя сповнене сюрпризів.`,
+    ];
+
+    // Випадковий вибір фраз
+    const beginning = beginnings[Math.floor(Math.random() * beginnings.length)];
+    const middle = middles[Math.floor(Math.random() * middles.length)];
+    const ending = endings[Math.floor(Math.random() * endings.length)];
+
+    // Формування повної історії
+    const fullStory = `${beginning} ${middle} ${ending}`;
+
+    return fullStory;
+}
