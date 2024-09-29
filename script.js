@@ -1,61 +1,56 @@
-document.getElementById('user-form').addEventListener('submit', function(e) {
+document.getElementById('greeting-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Отримання даних користувача
-    const name = document.getElementById('name').value;
-    const age = document.getElementById('age').value;
-    const mood = document.getElementById('mood').value;
-    const animal = document.getElementById('animal').value;
+    // Отримуємо дані користувача
+    const teacherName = document.getElementById('teacher-name').value.trim();
 
-    // Перевірка заповнення всіх полів
-    if (!name || !age || !mood || !animal) {
-        alert('Будь ласка, заповніть всі поля форми.');
+    // Перевіряємо, чи введено ім'я вчителя
+    if (!teacherName) {
+        alert('Будь ласка, введіть ім\'я вчителя.');
         return;
     }
 
-    // Генерація історії
-    const story = generateStory(name, age, mood, animal);
+    // Генерація передбачення
+    const prediction = generatePrediction(teacherName);
 
-    // Відображення історії
-    document.getElementById('result').innerHTML = story;
-    document.getElementById('story').style.display = 'block';
-    document.querySelector('.form-container form').style.display = 'none';
+    // Відображення передбачення
+    document.getElementById('teacher-name-output').innerText = teacherName;
+    document.getElementById('prediction').innerText = prediction;
+    document.getElementById('prediction-card').style.display = 'block';
+    document.getElementById('greeting-form').style.display = 'none';
 });
 
 document.getElementById('restart').addEventListener('click', function() {
-    // Скидання форми
-    document.getElementById('user-form').reset();
-    document.getElementById('story').style.display = 'none';
-    document.querySelector('.form-container form').style.display = 'block';
+    // Скидаємо форму
+    document.getElementById('greeting-form').reset();
+    document.getElementById('prediction-card').style.display = 'none';
+    document.getElementById('greeting-form').style.display = 'block';
 });
 
-function generateStory(name, age, mood, animal) {
-    // Массиви фраз для історії
+function generatePrediction(teacherName) {
     const beginnings = [
-        `Прокинувшись рано вранці, ${name} відчув(ла), що день буде незвичайним.`,
-        `Це був звичайний ранок для ${name}, але щось було не так.`,
-        `${name} відкрив(ла) очі і зрозумів(ла), що сьогодні світ виглядає інакше.`,
+        `Шановний(а) ${teacherName}, наступний рік обіцяє бути насиченим і захоплюючим!`,
+        `Дорогий(а) ${teacherName}, вас чекають неймовірні відкриття разом з учнями.`,
+        `${teacherName}, ваш професійний шлях приведе вас до несподіваних успіхів.`,
     ];
 
     const middles = [
-        `Вирішивши не звертати уваги на дивні відчуття, ${name} пішов(ла) займатися улюбленою справою — ${animal} спостерігали за ним(нею) з цікавістю.`,
-        `Раптом ${animal} заговорив(ла) людським голосом і запропонував(ла) неймовірну пригоду.`,
-        `Несподівано з'явився портал, і ${name} разом з ${animal} потрапили у паралельний всесвіт.`,
+        `У новому навчальному році ви відкриєте в собі нові таланти.`,
+        `Ваші уроки надихнуть учнів на великі досягнення.`,
+        `Ваша харизма і знання зроблять цей рік незабутнім.`,
     ];
 
     const endings = [
-        `Після всіх пригод, ${name} зрозумів(ла), що ${mood} настрій допоміг пережити цей незвичайний день.`,
-        `В кінці дня, ${name} усміхнувся(лась) і подумав(ла): "Добре, що мені ${age}, і життя тільки починається!"`,
-        `Цей день назавжди залишився в пам'яті ${name}, нагадуючи, що життя сповнене сюрпризів.`,
+        `Готуйтеся до неймовірних звершень і приємних сюрпризів!`,
+        `Учні вас обожнюють, і це принесе ще більше радісних моментів у новому році.`,
+        `Не забудьте про відпочинок – він теж важливий для великих досягнень.`,
     ];
 
-    // Випадковий вибір фраз
+    // Генеруємо випадкові частини передбачення
     const beginning = beginnings[Math.floor(Math.random() * beginnings.length)];
     const middle = middles[Math.floor(Math.random() * middles.length)];
     const ending = endings[Math.floor(Math.random() * endings.length)];
 
-    // Формування повної історії
-    const fullStory = `${beginning} ${middle} ${ending}`;
-
-    return fullStory;
+    // Повертаємо повне передбачення
+    return `${beginning} ${middle} ${ending}`;
 }
