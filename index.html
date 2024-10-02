@@ -4,30 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Передбачення для вчителів</title>
-    <!-- Підключення стилів -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Передбачення для вчителів</h1>
-    <h2>Введіть ім’я вчителя та отримайте унікальне передбачення!</h2>
+    <div class="container">
+        <h1>Передбачення для вчителів</h1>
+        <h2>Введіть ім’я та по батькові вчителя та отримайте унікальне передбачення!</h2>
     
-    <div class="form-container">
-        <form id="greeting-form">
-            <label>Ім'я вчителя:</label>
-            <input type="text" id="teacher-name" placeholder="Введіть ім'я вчителя" required>
+        <div class="form-container">
+            <form id="teacher-form">
+                <label for="teacher-name">Ім'я вчителя:</label>
+                <input type="text" id="teacher-name" placeholder="Введіть ім'я вчителя" required>
+                <button type="submit">Отримати передбачення</button>
+            </form>
 
-            <button type="submit">Отримати передбачення</button>
-        </form>
-
-        <div id="prediction-card" class="fade-in">
-            <h2>Передбачення для <span id="teacher-name-output"></span>:</h2>
-            <p id="prediction"></p>
-            <button id="restart">Зробити нове передбачення</button>
+            <div id="prediction-card" class="fade-in">
+                <h2>Передбачення для <span id="teacher-name-output"></span>:</h2>
+                <p id="prediction"></p>
+                <button id="restart">Зробити нове передбачення</button>
+            </div>
         </div>
     </div>
 
-    <!-- Підключення скриптів -->
     <script src="script.js"></script>
 
 </body>
