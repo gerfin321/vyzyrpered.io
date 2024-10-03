@@ -1,11 +1,9 @@
-/* Скидання стандартних відступів */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Стилі для body */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(to right, #66d3ff, #84ffc2);
@@ -15,7 +13,6 @@ body {
     align-items: center;
 }
 
-/* Контейнер для центрування контенту */
 .container {
     max-width: 600px;
     width: 100%;
@@ -23,7 +20,6 @@ body {
     padding: 20px;
 }
 
-/* Заголовки */
 h1 {
     font-size: 3rem;
     color: #fff;
@@ -37,7 +33,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Контейнер форми */
 .form-container {
     background-color: #cceff7;
     border-radius: 15px;
@@ -46,7 +41,6 @@ h2 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Стилі для інпутів і кнопок */
 input, button {
     width: 80%;
     padding: 12px;
@@ -68,7 +62,6 @@ input:focus {
     border-color: #7abaff;
 }
 
-/* Кнопки */
 button {
     background-color: #3ebd93;
     color: #fff;
@@ -81,7 +74,6 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Карточка передбачення */
 #prediction-card {
     display: none;
     background-color: #e0f7ff;
@@ -101,7 +93,6 @@ button:hover {
     line-height: 1.5;
 }
 
-/* Анімація появи */
 .fade-in {
     animation: fadeIn 1s forwards;
 }
@@ -111,7 +102,6 @@ button:hover {
     to { opacity: 1; }
 }
 
-/* Кнопка перезапуску */
 #restart {
     margin-top: 20px;
     background-color: #2f8ad6;
